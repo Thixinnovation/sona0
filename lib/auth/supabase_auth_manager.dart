@@ -95,8 +95,6 @@ class SupabaseAuthManager implements AuthManager {
           placeOfBirth: p.placeOfBirth ?? cur.placeOfBirth,
           nationality: p.nationality ?? cur.nationality,
           address: p.address ?? cur.address,
-          fatherName: p.fatherName ?? cur.fatherName,
-          motherName: p.motherName ?? cur.motherName,
           emergencyContactName: p.emergencyContactName ?? cur.emergencyContactName,
           emergencyContactPhone: p.emergencyContactPhone ?? cur.emergencyContactPhone,
           emergencyContactRelation: p.emergencyContactRelation ?? cur.emergencyContactRelation,
@@ -121,8 +119,6 @@ class SupabaseAuthManager implements AuthManager {
             merged.placeOfBirth == cur.placeOfBirth &&
             merged.nationality == cur.nationality &&
             merged.address == cur.address &&
-            merged.fatherName == cur.fatherName &&
-            merged.motherName == cur.motherName &&
             merged.emergencyContactName == cur.emergencyContactName &&
             merged.emergencyContactPhone == cur.emergencyContactPhone &&
             merged.emergencyContactRelation == cur.emergencyContactRelation &&
