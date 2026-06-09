@@ -114,7 +114,6 @@ class PushNotificationService {
     }
   }
 
-  // ✅ CORRECTION: La méthode initialize ne prend qu'un paramètre (InitializationSettings)
   Future<void> _initLocalNotifications() async {
     // Web doesn't support flutter_local_notifications.
     if (kIsWeb) return;
@@ -123,7 +122,7 @@ class PushNotificationService {
     const iosInit = DarwinInitializationSettings();
     const init = InitializationSettings(android: androidInit, iOS: iosInit);
     
-    // ✅ Correction: un seul argument (init), pas de paramètre 'settings'
+    // ✅ Correction: un seul argument (init)
     await _localNotifications.initialize(init);
 
     const channel = AndroidNotificationChannel(
