@@ -151,19 +151,16 @@ class MarketChatService {
       int totalUnread = 0;
       for (final conv in conversations as List) {
         final convMap = conv as Map<String, dynamic>;
+        // ✅ Correction 1: Supprimer 'count:' - la méthode select n'a pas ce paramètre
         final response = await _supabase
             .from('market_messages')
-            .select('id', count: CountOption.exact)
+            .select('id')
             .eq('conversation_id', convMap['id'])
             .eq('is_read', false)
             .neq('sender_id', userId);
         
-        // Correction: response est un PostgrestList avec un count
-        // Récupérer le count correctement
-        final countValue = response.count;
-        if (countValue != null) {
-          totalUnread += countValue;
-        }
+        // ✅ Correction 2: Utiliser .length sur la liste retournée
+        totalUnread += response.length;
       }
       return totalUnread;
     } catch (e) {
