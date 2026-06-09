@@ -2289,7 +2289,7 @@ class _UserDashboardPageState extends State<UserDashboardPage> {
                       Expanded(
                         child: TabBarView(
                           children: [
-                            _ProfileTab(authUser: me, profile: profile, score: thixScore, profileService: _profileService, firestoreUserService: _userService),
+                            _ProfileTab(authUser: me, profile: profile, score: thixScore, profileService: _profileService, userService: _userService),
                             _DocumentsTab(
                               uid: uid,
                               docs: _docs,
