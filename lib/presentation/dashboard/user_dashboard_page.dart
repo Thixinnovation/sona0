@@ -9,6 +9,7 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';      // ← AJOUTER
 import 'package:thix_id/auth/auth_controller.dart';
 import 'package:thix_id/models/app_user.dart';
 import 'package:thix_id/presentation/common/parcours_form.dart';
@@ -21,6 +22,7 @@ import 'package:thix_id/services/document_service.dart';
 import 'package:thix_id/services/verification_status.dart';
 import 'package:thix_id/services/profile_photo_service.dart';
 import 'package:thix_id/services/profile_service.dart';
+import 'package:thix_id/services/user_service.dart';          // ← AJOUTER
 import 'package:thix_id/models/thix_profile.dart';
 import 'package:thix_id/services/platform_file_from_path_stub.dart'
     if (dart.library.io) 'package:thix_id/services/platform_file_from_path_io.dart';
